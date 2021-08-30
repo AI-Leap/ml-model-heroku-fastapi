@@ -55,6 +55,7 @@ jobs:
     
     - name: dvc pull
       run: |
+        git init
         dvc init
         dvc remote add -d storage s3://dvc-store-k
         dvc pull
