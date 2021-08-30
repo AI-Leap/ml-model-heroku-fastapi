@@ -55,4 +55,6 @@ jobs:
     
     - name: dvc pull
       run: |
+        dvc init
+        dvc remote add -d storage s3://dvc-store-k
         dvc pull
