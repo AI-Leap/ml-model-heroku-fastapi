@@ -15,3 +15,11 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "census-fastapi-server" #Must be unique in Heroku
           heroku_email: "lightcode2018@gmail.com"
+      - name: Deploy to Heroku 
+        run: |
+          heroku login
+          git init
+          heroku git:remote -a census-fastapi-server
+          git add .
+          git commit -am "make it better"
+          git push heroku master
