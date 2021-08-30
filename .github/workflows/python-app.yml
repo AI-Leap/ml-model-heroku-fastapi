@@ -51,7 +51,7 @@ jobs:
       with:
         python-version: '3.8'
 
-      uses: iterative/setup-dvc@v1
+    - uses: iterative/setup-dvc@v1
     
     - name: dvc pull
       run: |
