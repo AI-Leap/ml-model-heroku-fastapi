@@ -3,7 +3,6 @@ from sklearn.linear_model import LogisticRegression
 import pickle
 
 
-
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
     """
@@ -25,9 +24,11 @@ def train_model(X_train, y_train):
 
     return lr
 
+
 def compute_model_metrics(y, preds):
     """
-    Validates the trained machine learning model using precision, recall, and F1.
+    Validates the trained machine learning model
+    using precision, recall, and F1.
 
     Inputs
     ------
@@ -65,6 +66,7 @@ def inference(model, X):
 
     return preds
 
+
 def save_model(model, file_path):
     '''
     Save the trained model to a file.
@@ -74,13 +76,13 @@ def save_model(model, file_path):
         Trained machine learning model.
     file_path : str
         Path to save the model.
-    
     Returns:
     ________
       None
     '''
     with open(file_path, 'wb') as f:
         pickle.dump(model, f)
+
 
 def load_model(file_path):
     '''

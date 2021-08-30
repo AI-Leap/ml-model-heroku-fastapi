@@ -10,7 +10,8 @@ from ml.model import train_model, save_model, inference, compute_model_metrics
 data = pd.read_csv('../data/census.csv')
 data.columns = [label.strip() for label in data.columns]
 
-# Optional enhancement, use K-fold cross validation instead of a train-test split.
+# Optional enhancement,
+# use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)
 
 cat_features = [
