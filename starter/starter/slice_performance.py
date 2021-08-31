@@ -26,12 +26,12 @@ def compute_slice_performance(fixed_feature, fixed_value):
     cat_features = [
         "workclass",
         "education",
-        "marital-status",
+        "marital_status",
         "occupation",
         "relationship",
         "race",
         "sex",
-        "native-country",
+        "native_country",
     ]
 
     # Optional enhancement,

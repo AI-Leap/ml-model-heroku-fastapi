@@ -17,6 +17,7 @@ jobs:
           heroku_email: "lightcode2018@gmail.com"
       - name: Deploy to Heroku 
         run: |
-          heroku login
-          heroku git:remote -a census-fastapi-server
-          git push heroku master
+          # heroku login
+          # heroku git:remote -a census-fastapi-server
+          # git push heroku master
+          pytest ./fastapi_server/test_api.py
