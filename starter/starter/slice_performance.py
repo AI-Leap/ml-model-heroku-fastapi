@@ -61,12 +61,12 @@ precision, recall, fbeta = compute_slice_performance('sex', 'Male')
 precision2, recall2, fbeta2 = compute_slice_performance('sex', 'Female')
 
 with open('slice_output.txt', 'w') as f:
-    print('Category: workclass, Value: Private', file=f)
+    print('Category: sex, Value: Male', file=f)
     print('- Precision: ' + str(precision), file=f)
     print('- Recall: ' + str(recall), file=f)
     print('- Fbeta: ' + str(fbeta), file=f)
 
-    print('Category: workclass, Value: Never-worked', file=f)
+    print('Category: sex, Value: Female', file=f)
     print('- Precision: ' + str(precision2), file=f)
     print('- Recall: ' + str(recall2), file=f)
     print('- Fbeta: ' + str(fbeta2), file=f)
