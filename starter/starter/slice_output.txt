@@ -1,8 +1,8 @@
 Category: workclass, Value: Private
-- Precision: 0.6789772727272727
-- Recall: 0.246900826446281
-- Fbeta: 0.3621212121212121
+- Precision: 0.7716763005780347
+- Recall: 0.26766917293233083
+- Fbeta: 0.3974692966133234
 Category: workclass, Value: Never-worked
-- Precision: 1.0
-- Recall: 1.0
-- Fbeta: 1.0
+- Precision: 0.5440414507772021
+- Recall: 0.3143712574850299
+- Fbeta: 0.39848197343453506
