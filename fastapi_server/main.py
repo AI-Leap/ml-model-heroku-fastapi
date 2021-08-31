@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
-import numpy as np
 from starter.starter.ml.data import process_data
 from starter.starter.ml.model import load_model, inference
 from typing import Optional
