@@ -3,33 +3,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
 from starter.starter.ml.model \
-    import inference, load_model, train_model, compute_model_metrics
+    import load_model, inference, compute_model_metrics
 from starter.starter.ml.data import process_data
 
 
-def test_train_model():
-    # Add code to load in the data.
-    data = pd.read_csv('./starter/data/clean_census.csv')
-
-    train, _ = train_test_split(data, test_size=0.20)
-
-    cat_features = [
-        "workclass",
-        "education",
-        "marital-status",
-        "occupation",
-        "relationship",
-        "race",
-        "sex",
-        "native-country",
-    ]
-
-    X_train, y_train, _, _ = process_data(
-        train, categorical_features=cat_features, label="salary", training=True
-    )
-
-    model = train_model(X_train, y_train)
-
+def test_load_model():
+    model = load_model('./starter/model/model.pkl')
     assert isinstance(model, LogisticRegression)
 
 
@@ -53,7 +32,7 @@ def test_inference():
     encoder = load_model('./starter/model/encoder.pkl')
     lb = load_model('./starter/model/lb.pkl')
 
-    X_test, y_test, _, _ = process_data(
+    X_test, _, _, _ = process_data(
         test,
         categorical_features=cat_features,
         label="salary",
