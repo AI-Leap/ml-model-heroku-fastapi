@@ -6,9 +6,44 @@ on:
       - master
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: dvc setup
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - uses: iterative/setup-dvc@v1
+      
+      - name: dvc pull
+        run: |
+          git init
+          dvc init
+          dvc remote add -d storage s3://dvc-store-k
+          dvc pull
+
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Lint with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Test with pytest
+        run: |
+          dvc pull
+          pytest ./fastapi_server/test_api.py
+
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
@@ -20,4 +55,3 @@ jobs:
           # heroku login
           # heroku git:remote -a census-fastapi-server
           # git push heroku master
-          pytest ./fastapi_server/test_api.py

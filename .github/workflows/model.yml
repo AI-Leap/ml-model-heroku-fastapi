@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  dvc:
+  model_testing:
     runs-on: ubuntu-latest
     
     steps:
