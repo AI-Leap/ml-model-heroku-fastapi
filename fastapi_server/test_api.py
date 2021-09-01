@@ -39,21 +39,23 @@ def test_post2():
         "/predict/",
         headers={"X-Token": "coneofsilence"},
         json={
-            "age": 60,
-            "fnlgt": 337895,
+            "age": 29,
+            "workclass": "Private",
+            "fnlgt": 122127,
             "education_num": 13,
-            "workclass": "Federal-gov",
-            "education": "Doctorate",
-            "marital_status": "Married-civ-spouse",
+            "education": "Bachelors",
+            "marital_status": "Never-married",
             "occupation": "Prof-specialty",
-            "relationship": "Husband",
+            "relationship": "Not-in-family",
             "race": "White",
             "sex": "Female",
             "hours_per_week": 40,
-            "native_country": "Canada"
+            "native_country": "United-States",
+            "capital_gain": 8614,
+            "capital_loss": 0
         }
     )
     assert r.status_code == 200
     assert r.json() == {
-        'prediction': [0]
+        'prediction': [1]
     }

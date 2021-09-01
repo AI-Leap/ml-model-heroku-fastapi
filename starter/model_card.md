@@ -28,12 +28,12 @@ Overall Performance
 - Recall: 0.26271561256081377
 - Fbeta: 0.3865929059550927
 
-Slice Performance
-Category: sex, Value: Male
+### Slice Performance
+### Category: sex, Value: Male
 - Precision: 0.812199036918138
 - Recall: 0.2661756970015781
 - Fbeta: 0.4009508716323296
-Category: sex, Value: Female
+### Category: sex, Value: Female
 - Precision: 0.5668449197860963
 - Recall: 0.3045977011494253
 - Fbeta: 0.3962616822429907

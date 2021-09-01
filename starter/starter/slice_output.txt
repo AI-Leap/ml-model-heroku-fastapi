@@ -1,8 +1,8 @@
 Category: sex, Value: Male
-- Precision: 0.812199036918138
-- Recall: 0.2661756970015781
-- Fbeta: 0.4009508716323296
+- Precision: 1.0
+- Recall: 0.3333333333333333
+- Fbeta: 0.5
 Category: sex, Value: Female
-- Precision: 0.5668449197860963
-- Recall: 0.3045977011494253
-- Fbeta: 0.3962616822429907
+- Precision: 0.3333333333333333
+- Recall: 1.0
+- Fbeta: 0.5
